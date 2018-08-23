@@ -35,11 +35,11 @@ begin
 end;
 
 procedure TfmPrincipal.Button2Click(Sender: TObject);
-var f : TfmUEntProd;
+var f:TfmUEntProd;
 begin
- //  f.TfmUEntProd.ShowModal(nil);
- //  f.TfmUEntProd.create;
- //  f.Destroy;
+  f:=TfmUEntProd.Create(nil);
+  f.ShowModal;
+  f.Free;
 end;
 
 procedure TfmPrincipal.resetform;

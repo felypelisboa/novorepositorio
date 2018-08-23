@@ -65,6 +65,7 @@ begin
   txtfilial.Clear;
   txtproduto.Clear;
   txtqtdprod.Clear;
+  txtqdtent.Clear;
 end;
 
 procedure TfmUEntProd.btngerarClick(Sender: TObject);
@@ -99,7 +100,8 @@ end;
 
 procedure TfmUEntProd.gerar;
 begin
-
+  qtdtot := StrToInt(txtqtdprod.Text);
+  qtdent := StrToInt(txtqdtent.Text);
 end;
 
 procedure TfmUEntProd.btnsairClick(Sender: TObject);
@@ -125,20 +127,19 @@ end;
 
 //lista
 
-function Tlistabasica.CreateNew : TLista;
+function Tlistabasica.CreateNew : Tlistabasica;
 begin
-  Result        := Tlista.Create;
-  Result.Parent := Self;
+  Result        := Tlistabasica.Create;
   Result.Index  := Self.Count;
   Add(Result);
 end;
 
-function Tlista.Get(index: Integer): TLista;
+function Tlistabasica.Get(index: Integer): Tlistabasica;
 begin
   Result := inherited Items[Index];
 end;
 
-function Tlista.indexOf(codigo: Integer): Tlista;
+function Tlistabasica.indexOf(codigo: Integer): Tlistabasica;
 var i: Integer;
 begin
   Result := nil;

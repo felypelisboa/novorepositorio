@@ -70,6 +70,7 @@ object fmUEntProd: TfmUEntProd
     Top = 41
     Width = 61
     Height = 21
+    NumbersOnly = True
     TabOrder = 0
     OnKeyDown = txtfilialKeyDown
   end
@@ -78,6 +79,7 @@ object fmUEntProd: TfmUEntProd
     Top = 68
     Width = 61
     Height = 21
+    NumbersOnly = True
     TabOrder = 1
     OnKeyDown = txtprodutoKeyDown
   end
@@ -86,6 +88,7 @@ object fmUEntProd: TfmUEntProd
     Top = 66
     Width = 61
     Height = 21
+    NumbersOnly = True
     TabOrder = 2
   end
   object btnlimpar: TButton
@@ -111,6 +114,7 @@ object fmUEntProd: TfmUEntProd
     Top = 41
     Width = 61
     Height = 21
+    NumbersOnly = True
     TabOrder = 5
   end
   object btnsair: TButton
