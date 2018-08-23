@@ -6,22 +6,19 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
-type
-  Tlistabasica = class(TList)
+  TLista = class(TList)
     private
       index  : Integer;
-      function Get(index: Integer) : Tlistabasica;
+      Parent : TlistPrincipal;
+      function Get(index: Integer) : TLista;
+      procedure SetItem(Index: Integer; Value: TLista);
     public
       codigo   : Integer;
       qtdtot   : Integer;
       qtdent   : Integer;
-      function CreateNew : Tlistabasica;
-      function indexOf(codigo :Integer) : Tlistabasica;
-      property Items[Index:Integer] : Tlistabasica read Get;
-  end;
-  TlistaPrincipal = class (Tlistabasica)
-    public
-      procedure Carrega;
+      function CreateNew : TLista;
+      function indexOf(codigo :Integer) : TLista;
+      property Items[Index:Integer] : TLista read Get;
   end;
 
 
@@ -125,7 +122,7 @@ end;
 
 //lista
 
-function Tlistabasica.CreateNew : TLista;
+function Tlista.CreateNew : TLista;
 begin
   Result        := Tlista.Create;
   Result.Parent := Self;
@@ -152,11 +149,5 @@ begin
   end;
 end;
 
-// carrega lista
-
-procedure TlistaPrincipal.carrega;
-begin
-
-end;
 
 end.

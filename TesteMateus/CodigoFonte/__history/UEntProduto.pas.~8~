@@ -7,25 +7,6 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  Tlistabasica = class(TList)
-    private
-      index  : Integer;
-      function Get(index: Integer) : Tlistabasica;
-    public
-      codigo   : Integer;
-      qtdtot   : Integer;
-      qtdent   : Integer;
-      function CreateNew : Tlistabasica;
-      function indexOf(codigo :Integer) : Tlistabasica;
-      property Items[Index:Integer] : Tlistabasica read Get;
-  end;
-  TlistaPrincipal = class (Tlistabasica)
-    public
-      procedure Carrega;
-  end;
-
-
-type
   TfmUEntProd = class(TForm)
     txtfilial: TEdit;
     Label1: TLabel;
@@ -48,7 +29,7 @@ type
   private
     { Private declarations }
   public
-    procedure gerar;
+
   end;
 
 var
@@ -57,8 +38,6 @@ var
 implementation
 
 {$R *.dfm}
-
-var qtdent, qtdtot, codfil : Integer;
 
 procedure TfmUEntProd.btnlimparClick(Sender: TObject);
 begin
@@ -90,16 +69,7 @@ procedure TfmUEntProd.btngerarClick(Sender: TObject);
 
   end;
 begin
-  if valida then
-  begin
-
-    ShowMessage('Gerado com sucesso');
-  end;
-end;
-
-procedure TfmUEntProd.gerar;
-begin
-
+  if valida
 end;
 
 procedure TfmUEntProd.btnsairClick(Sender: TObject);
@@ -121,42 +91,6 @@ begin
    case key of
       VK_RETURN : txtqtdprod.SetFocus;
    end;
-end;
-
-//lista
-
-function Tlistabasica.CreateNew : TLista;
-begin
-  Result        := Tlista.Create;
-  Result.Parent := Self;
-  Result.Index  := Self.Count;
-  Add(Result);
-end;
-
-function Tlista.Get(index: Integer): TLista;
-begin
-  Result := inherited Items[Index];
-end;
-
-function Tlista.indexOf(codigo: Integer): Tlista;
-var i: Integer;
-begin
-  Result := nil;
-  for i  := 0 to Self.Count - 1 do
-  begin
-    if  (Self.Items[i].codigo = codigo) then
-    begin
-      Result := Self.Items[i];
-      Break;
-    end;
-  end;
-end;
-
-// carrega lista
-
-procedure TlistaPrincipal.carrega;
-begin
-
 end;
 
 end.

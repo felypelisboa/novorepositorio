@@ -125,7 +125,7 @@ end;
 
 //lista
 
-function Tlistabasica.CreateNew : TLista;
+function Tlista.CreateNew : TLista;
 begin
   Result        := Tlista.Create;
   Result.Parent := Self;
@@ -155,6 +155,7 @@ end;
 // carrega lista
 
 procedure TlistaPrincipal.carrega;
+var
 begin
 
 end;
