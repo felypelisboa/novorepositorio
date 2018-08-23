@@ -15,6 +15,8 @@ type
     Panel2: TPanel;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -40,6 +42,19 @@ begin
   f:=TfmUEntProd.Create(nil);
   f.ShowModal;
   f.Free;
+end;
+
+procedure TfmPrincipal.Button3Click(Sender: TObject);
+begin
+  ShowMessage('Não deu tempo de fazer :(');
+end;
+
+procedure TfmPrincipal.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   case key of
+      VK_ESCAPE : self.Close;
+   end;
 end;
 
 procedure TfmPrincipal.resetform;

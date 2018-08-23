@@ -12,6 +12,7 @@ object fmPrincipal: TfmPrincipal
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -27,7 +28,7 @@ object fmPrincipal: TfmPrincipal
       Width = 185
       Height = 43
       Caption = 'Sair'
-      TabOrder = 0
+      TabOrder = 2
       OnClick = Button1Click
     end
     object Button2: TButton
@@ -36,7 +37,7 @@ object fmPrincipal: TfmPrincipal
       Width = 185
       Height = 43
       Caption = 'Entrada'
-      TabOrder = 1
+      TabOrder = 0
       OnClick = Button2Click
     end
     object Button3: TButton
@@ -45,7 +46,8 @@ object fmPrincipal: TfmPrincipal
       Width = 185
       Height = 43
       Caption = 'Saidas'
-      TabOrder = 2
+      TabOrder = 1
+      OnClick = Button3Click
     end
     object Panel2: TPanel
       Left = 1
